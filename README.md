@@ -6,7 +6,8 @@
 - Crear un programa que **_VERIFIQUE_** si el numero de la tarjeta de credito ingresada es valida usando el _algoritmo de Luhn_
 
 ### flujograma
- - Revisar el archivo Excel.xls **_flujograma tarjeta de crédito válida_** encontrada en la carpeta **_docs_**
+ - Revisar el archivo Excel.xls **_flujograma tarjeta de crédito válida_** encontrada en la carpeta **_docs_** , enlace:
+ 
 
 ### pseudocódigo
 

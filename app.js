@@ -7,17 +7,26 @@ El usuario no debe poder ingresar un campo vacío*/
 /* Creando la funcion CardNumberInArray para pasar los digitos del numero
 de la tarjeta ingresada a una array en orden inverso*/
 function CardNumberInArray(numberCard){
-  var cardNumberInArrayReverse = [];
-  for( var i= 0; i < numberCard.length; i++){
-  /*Accediendo a cada digito del numero ingresado(string),
-  transformandolo en "numero"(parseInt) y agregando al nuevo array
-  con "unshift"para que este en el orden invertido*/
-   cardNumberInArrayReverse.unshift(parseInt(numberCard.charAt(i)));
-  }
-  return cardNumberInArrayReverse;//Retornamos el nuevo Array.
+  if ( numberCard === ""){
+   alert ("INGRESAR almenos un numero");
+   } else {
+     var cardNumberInArrayReverse = [];
+     for( var i= 0; i < numberCard.length; i++){
+      /*Accediendo a cada digito del numero ingresado(string),
+      transformandolo en "numero"(parseInt) y agregando al nuevo array
+      con "unshift"para que este en el orden invertido*/
+     cardNumberInArrayReverse.unshift(parseInt(numberCard.charAt(i)));
+     }
+       return cardNumberInArrayReverse;//Retornamos el nuevo Array.
+    }
 }
+do{
+  var inPut = prompt("Ingrese su numero de tarjeta de credito");
+   var newCard = CardNumberInArray(inPut);
+ // console.log (newCard);
+} while(inPut === "");
 //Llamando a la funcion, y el array nuevo obtenido le agregamos a la variable"newCard".
-var newCard = CardNumberInArray(prompt("ingrese numero de tarjeta"));
+//var newCard = CardNumberInArray(prompt("ingrese numero de tarjeta"));
 /*Creando uuna funcion que devuelva un nuevo array con los digitos
 duplicados de las posiciones pares del array"newCard".*/
 function duplicateDigitCard(newCard){
@@ -43,7 +52,7 @@ function duplicateDigitCard(newCard){
  return array; // Retornar el nuevo array
 }
 // Llamando a la funcion y colocando el nuevo array en la variable "modifiedCardNumber"
-var modifiedCardNumber = sumCard(newCard);
+var modifiedCardNumber = duplicateDigitCard(newCard);
 
 /* Creando una funcion (isValidCard)  que sume los digitos del nuevo array
 " modifiedCardNumber" y ver si es divisible por 10 para verificar la validez
@@ -56,9 +65,9 @@ function isValidCard(modifiedCardNumber){
 /*Creando la condicion de que la suma total sea divisible por 10 para verificar
  la validez del numero de la tarjeta*/
  if(sumTotal % 10===0){
-  alert("su numero de tarjeta es valido");
+  alert("Su numero de tarjeta es valido");
  } else {
-   alert("su numero de tarjeta  no es valido");
+   alert("Su numero de tarjeta  no es valido");
    }
 }
 //Llamando la funcion
